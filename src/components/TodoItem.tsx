@@ -63,10 +63,12 @@ function TodoItem({
           <CheckButton checked={checked} handleCheck={handleCheck} />
           <div className={styles.texts}>
             <p
-              className={getClasses([
-                styles.todoText,
-                todo.status === "complete" && styles["todoText--completed"],
-              ])}
+              className={getClasses(
+                [
+                  styles.todoText,
+                  todo.status === "complete" ? styles["todoText--completed"] : "",
+                ]
+              )}
             >
               {todo.title}
             </p>
